@@ -5854,6 +5854,7 @@ class VikRentCar {
 		$dbo = JFactory::getDBO();
 		$characterists = array();
 		if (count($ids) > 0) {
+
 			$q = "SELECT * FROM `#__vikrentcar_caratteristiche` WHERE `id` IN (".implode(",", $ids).") ORDER BY `#__vikrentcar_caratteristiche`.`ordering` ASC;";
 			$dbo->setQuery($q);
 			$dbo->execute();
@@ -5871,6 +5872,7 @@ class VikRentCar {
 	}
 
 	public static function sortCharacteristics($current, $map) {
+
 		$sorted = array();
 		$sortmap = array();
 		foreach ($current as $k => $v) {

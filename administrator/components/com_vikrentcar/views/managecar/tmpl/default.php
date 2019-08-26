@@ -78,11 +78,12 @@ if (is_array($carats)) {
 	$jj = 0;
 	foreach ($carats as $carat) {
 		$wcarats .= "<div class=\"vrc-mngcar-serv-entry\">
-        <select  name=\"ccarat[]\" id=\"carat".$carat['id']."\" >
-            <option value=''>нет</option>
-            <option value='".$carat['id']."' ".(array_key_exists($carat['id'], $arrcarats) ? " selected=\"selected\"" : "")." >да </option>
-        </select> 
-        <label for=\"carat".$carat['id']."\">".$carat['name']."</label></div>\n";
+        <select  name=\"ccarat[]\" id=\"carat".$carat['id']."\" >";
+        $wcarats .= "<option value=''></option>";
+		foreach ( explode(";",$carat["value"]) as $val){
+            $wcarats .= "<option value='".$carat['id']."|". $val."' ".(array_key_exists($carat['id']."|".$val, $arrcarats) ? " selected=\"selected\"" : "")."            >".$val."</option>";
+        }
+        $wcarats .= "</select><label for=\"carat".$carat['id']."\">".$carat['name']."</label></div>\n";
 		$nn++;
 		if (($nn % 3) == 0) {
 			$jj++;

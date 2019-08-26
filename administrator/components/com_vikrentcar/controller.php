@@ -1303,7 +1303,7 @@ class VikRentCarController extends JControllerVikRentCar {
 			}
 			if (!empty($pccarat) && @count($pccarat)) {
 				foreach ($pccarat as $ccarat) {
-					$pccaratdef.=$ccarat.";";
+				    if ($ccarat != ":") $pccaratdef.=$ccarat.";";
 				}
 			} else {
 				$pccaratdef="";

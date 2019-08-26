@@ -28,8 +28,18 @@ if ($vrcdateformat == "%d/%m/%Y") {
 } else {
 	$df = 'Y/m/d';
 }
+$tall_characteristics = [];
+foreach ($all_characteristics as $k=>$v){
+    $tmp = explode("|", $k);
+    if ($tmp[1]) {
+        if (!isset($tall_characteristics[$tmp[0]])) $tall_characteristics[$tmp[0]] = 0;
+        $tall_characteristics[$tmp[0]] += 1;
+    }
+}
+$all_characteristics = $tall_characteristics;
 
 $characteristics_map = VikRentCar::loadCharacteristics((count($all_characteristics) > 0 ? array_keys($all_characteristics) : array()), $vrc_tn);
+
 $currencysymb = VikRentCar::getCurrencySymb();
 
 $vat_included = VikRentCar::ivaInclusa();
@@ -106,6 +116,7 @@ $droploc = VikRentCar::getPlaceInfo($returnplace, $vrc_tn);
 $usecharatsfilter = VikRentCar::useCharatsFilter();
 if ($usecharatsfilter === true && empty($navig) && count($all_characteristics) > 0) {
 	$all_characteristics = VikRentCar::sortCharacteristics($all_characteristics, $characteristics_map);
+
 	?>
 <div class="vrc-searchfilter-characteristics-container">
 	<div class="vrc-searchfilter-characteristics-list">
@@ -116,7 +127,9 @@ if ($usecharatsfilter === true && empty($navig) && count($all_characteristics) >
 			<span class="vrc-searchfilter-cinput">
                 <select>
                     <option value=""></option>
-                    <option value="<?php echo $chk; ?>">да</option>
+                    <?php foreach (explode(";",$characteristics_map[$chk]["value"]) as $val) {?>
+                        <option value="<?=$chk."|".$val ?>"> <?=$val?></option>
+                    <?php } ?>
                 <select>
             </span>
 		<?php
