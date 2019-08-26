@@ -113,7 +113,12 @@ if ($usecharatsfilter === true && empty($navig) && count($all_characteristics) >
 	foreach ($all_characteristics as $chk => $chv) {
 		?>
 		<div class="vrc-searchfilter-characteristic">
-			<span class="vrc-searchfilter-cinput"><input type="checkbox" value="<?php echo $chk; ?>" /></span>
+			<span class="vrc-searchfilter-cinput">
+                <select>
+                    <option value=""></option>
+                    <option value="<?php echo $chk; ?>">да</option>
+                <select>
+            </span>
 		<?php
 		if (!empty($characteristics_map[$chk]['icon'])) {
 			?>
@@ -161,7 +166,7 @@ foreach ($res as $k => $r) {
 	?>
 	<div class="car_result" data-car-characteristics="<?php echo $getcar['idcarat']; ?>">
 		<div class="vrc-car-result-left">
-		
+
 		<span class="carlistlink"><span class=""><?php echo JText::_('VRCCARMODEL'); ?></span> <?php echo $getcar['name']; ?></span>
 		<span class="categorycarlist"><?php
 					if (!empty($vcategory)) {
@@ -171,10 +176,10 @@ foreach ($res as $k => $r) {
 					}
 					?>
 		</span>
-		
-		
+
+
 			<img class="imgresult" alt="<?php echo $getcar['name']; ?>" src="<?php echo $imgpath; ?>" />
-			
+
 			<?php
 					if (!empty($carats)) {
 						?>
@@ -188,7 +193,7 @@ foreach ($res as $k => $r) {
 		<div class="vrc-car-result-right">
 			<div class="vrc-car-result-rightinner">
 				<div class="vrc-car-result-rightinner-deep">
-				
+
 				<div class="vrc-car-lastblock">
 						<div class="vrc-car-price">
 							<div class="vrcsrowpricediv<?php echo $has_promotion === true ? ' vrc-promotion-price' : ''; ?>">
@@ -200,7 +205,7 @@ foreach ($res as $k => $r) {
 							$costperday = $car_cost / $days;
 							?>
 							<!--<div class="vrc-car-result-dailycost">
-								
+
 								<span class="vrc_price"><?php echo VikRentCar::numberFormat($costperday); ?></span>
 								<span class="vrc_currency"><?php echo $currencysymb; ?></span>
 								<span class="vrc-perday-txt"><?php echo JText::_('VRCPERDAYCOST'); ?></span>
@@ -209,12 +214,12 @@ foreach ($res as $k => $r) {
 						}
 						?>
 						</div>
-						
+
 					</div>
-				
+
 					<div class="vrc-car-result-inner">
-						
-					
+
+
 						<div class="vrc-car-result-description">
 					<?php
 					if (!empty($getcar['short_info'])) {
@@ -224,7 +229,7 @@ foreach ($res as $k => $r) {
 					}
 					?>
 						</div>
-					
+
 					<?php
 					if ($has_promotion === true && !empty($r[0]['promotion']['promotxt'])) {
 						?>
@@ -234,7 +239,7 @@ foreach ($res as $k => $r) {
 						<?php
 					}
 					?>
-					
+
 					<div class="vrc-car-bookingbtn">
 							<form action="<?php echo JRoute::_('index.php?option=com_vikrentcar'.(!empty($pitemid) ? '&Itemid='.$pitemid : '')); ?>" method="get">
 								<input type="hidden" name="option" value="com_vikrentcar"/>
@@ -258,9 +263,9 @@ foreach ($res as $k => $r) {
 							</form>
 						</div>
 					</div>
-					
-					
-					
+
+
+
 				</div>
 			</div>
 		</div>
@@ -296,26 +301,32 @@ jQuery(document).ready(function() {
 <?php
 if ($usecharatsfilter === true) {
 	?>
-	jQuery('.vrc-searchfilter-cinput input').click(function() {
+	jQuery('.vrc-searchfilter-cinput select').change(function() {
 		var charact_id = jQuery(this).val();
-		var charact_el = jQuery(this).parent('span').parent('div');
-		var dofilter = jQuery(this)[0].checked;
-		var cur_result = parseInt(jQuery('.vrcarsfound span').text());
+		var charact_ids = []
+        var dofilter = true
+        jQuery('.vrc-searchfilter-cinput select').each(function (i,e) {
+            if (jQuery(e).val() != "") charact_ids.push(jQuery(e).val())
+        })
+		var cur_result = 0;
 		jQuery('.car_result').each(function() {
 			var car_carats = jQuery(this).attr('data-car-characteristics').replace(/;+$/,'').split(';');
-			if (dofilter === true && jQuery.inArray(charact_id, car_carats) === -1) {
-				jQuery(this).fadeOut();
-				cur_result--;
-			} else if (dofilter === false && jQuery.inArray(charact_id, car_carats) === -1) {
-				jQuery(this).fadeIn();
-				cur_result++;
+			var show = true
+            charact_ids.forEach(function (e) {
+                console.log(jQuery.inArray(e, car_carats))
+                if (jQuery.inArray(e, car_carats) === -1) show = false
+            })
+			if (show) {
+                jQuery(this).fadeIn();
+                cur_result++;
+			} else  {
+                jQuery(this).fadeOut();
 			}
 		});
 		if (cur_result < 0) {
 			cur_result = 0;
 		}
 		jQuery('.vrcarsfound span').text(cur_result);
-		(dofilter === true ? charact_el.addClass('vrc-searchfilter-characteristic-active') : charact_el.removeClass('vrc-searchfilter-characteristic-active'));
 	});
 	jQuery('.vrc-searchfilter-cicon, .vrc-searchfilter-cname, .vrc-searchfilter-cquantity').click(function(){
 		jQuery(this).closest('.vrc-searchfilter-characteristic').find('.vrc-searchfilter-cinput').find('input').trigger('click');

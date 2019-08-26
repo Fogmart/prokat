@@ -519,6 +519,7 @@ class VikRentCarController extends JControllerVikRentCar {
 		$pcaratname = VikRequest::getString('caratname', '', 'request');
 		$pcaratmix = VikRequest::getString('caratmix', '', 'request');
 		$pcarattextimg = VikRequest::getString('carattextimg', '', 'request', VIKREQUEST_ALLOWHTML);
+		$pcaratvalue = VikRequest::getString('caratvalue', '', 'request', VIKREQUEST_ALLOWHTML);
 		$pautoresize = VikRequest::getString('autoresize', '', 'request');
 		$presizeto = VikRequest::getString('resizeto', '', 'request');
 		if (!empty($pcaratname)) {
@@ -568,7 +569,7 @@ class VikRentCarController extends JControllerVikRentCar {
 			} else {
 				$newsortnum = 1;
 			}
-			$q = "INSERT INTO `#__vikrentcar_caratteristiche` (`name`,`icon`,`align`,`textimg`,`ordering`) VALUES(".$dbo->quote($pcaratname).", ".$dbo->quote($picon).", ".$dbo->quote($pcaratmix).", ".$dbo->quote($pcarattextimg).", '".$newsortnum."');";
+			$q = "INSERT INTO `#__vikrentcar_caratteristiche` (`name`,`icon`,`align`,`textimg`,`value`,`ordering`) VALUES(".$dbo->quote($pcaratname).", ".$dbo->quote($picon).", ".$dbo->quote($pcaratmix).", ".$dbo->quote($pcarattextimg).", '".$pcaratvalue."', '".$newsortnum."');";
 			$dbo->setQuery($q);
 			$dbo->execute();
 		}
@@ -580,6 +581,7 @@ class VikRentCarController extends JControllerVikRentCar {
 		$pcaratname = VikRequest::getString('caratname', '', 'request');
 		$pcaratmix = VikRequest::getString('caratmix', '', 'request');
 		$pcarattextimg = VikRequest::getString('carattextimg', '', 'request', VIKREQUEST_ALLOWHTML);
+        $pcaratvalue = VikRequest::getString('caratvalue', '', 'request', VIKREQUEST_ALLOWHTML);
 		$pwhereup = VikRequest::getString('whereup', '', 'request');
 		$pautoresize = VikRequest::getString('autoresize', '', 'request');
 		$presizeto = VikRequest::getString('resizeto', '', 'request');
@@ -621,7 +623,7 @@ class VikRentCarController extends JControllerVikRentCar {
 				$picon = "";
 			}
 			$dbo = JFactory::getDBO();
-			$q = "UPDATE `#__vikrentcar_caratteristiche` SET `name`=".$dbo->quote($pcaratname).",".(strlen($picon) > 0 ? "`icon`='".$picon."'," : "")."`align`=".$dbo->quote($pcaratmix).",`textimg`=".$dbo->quote($pcarattextimg)." WHERE `id`=".$dbo->quote($pwhereup).";";
+			$q = "UPDATE `#__vikrentcar_caratteristiche` SET `name`=".$dbo->quote($pcaratname).",".(strlen($picon) > 0 ? "`icon`='".$picon."'," : "")."`align`=".$dbo->quote($pcaratmix).",`textimg`=".$dbo->quote($pcarattextimg).", `value`=".$dbo->quote($pcaratvalue)." WHERE `id`=".$dbo->quote($pwhereup).";";
 			$dbo->setQuery($q);
 			$dbo->execute();
 		}

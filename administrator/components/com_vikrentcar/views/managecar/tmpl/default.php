@@ -77,7 +77,12 @@ if (is_array($carats)) {
 	$nn = 0;
 	$jj = 0;
 	foreach ($carats as $carat) {
-		$wcarats .= "<div class=\"vrc-mngcar-serv-entry\"><input type=\"checkbox\" name=\"ccarat[]\" id=\"carat".$carat['id']."\" value=\"".$carat['id']."\"".(array_key_exists($carat['id'], $arrcarats) ? " checked=\"checked\"" : "")."/> <label for=\"carat".$carat['id']."\">".$carat['name']."</label></div>\n";
+		$wcarats .= "<div class=\"vrc-mngcar-serv-entry\">
+        <select  name=\"ccarat[]\" id=\"carat".$carat['id']."\" >
+            <option value=''>нет</option>
+            <option value='".$carat['id']."' ".(array_key_exists($carat['id'], $arrcarats) ? " selected=\"selected\"" : "")." >да </option>
+        </select> 
+        <label for=\"carat".$carat['id']."\">".$carat['name']."</label></div>\n";
 		$nn++;
 		if (($nn % 3) == 0) {
 			$jj++;
