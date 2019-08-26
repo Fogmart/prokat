@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" addfieldpath="/modules/mod_djmegamenu/fields">
+		<fieldset name="djmegamenu-params" label="PLG_DJMEGAMENU_PARAMS_LABEL">
+			
+			<field name="djmegamenu-show" type="radio" class="btn-group" default="" label="PLG_DJMEGAMENU_SHOW_ITEM_IN" description="PLG_DJMEGAMENU_SHOW_ITEM_IN_DESC">
+				<option value="">PLG_DJMEGAMENU_BOTH</option>
+				<option value="mega">PLG_DJMEGAMENU_MEGAMENU</option>
+				<option value="mobile">PLG_DJMEGAMENU_MOBILEMENU</option>
+			</field>
+			
+			<field name="djmegamenu-subtitle" type="text" size="40" default="" label="PLG_DJMEGAMENU_SUBTITLE" description="PLG_DJMEGAMENU_SUBTITLE_DESC" />
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_FA_ICON_DESC" />
+			<field name="djmegamenu-fa" type="text" size="40" default="" label="PLG_DJMEGAMENU_FA_ICON" />
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_FULL_WIDTH_SUBMENU_DESC" />
+			<field name="djmegamenu-fullwidth" type="radio" class="btn-group" default="0" label="PLG_DJMEGAMENU_FULL_WIDTH_SUBMENU">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_COLUMN_BREAK_DESC" />
+			<field name="djmegamenu-column_break" type="radio" class="btn-group" default="0" label="PLG_DJMEGAMENU_COLUMN_BREAK">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="djmegamenu-column_width" type="text" class="input-mini" default="" label="PLG_DJMEGAMENU_COLUMN_WIDTH" description="PLG_DJMEGAMENU_COLUMN_WIDTH_DESC" />
+			<field name="djmegamenu-expand" type="radio" class="btn-group" default="" label="PLG_DJMEGAMENU_SUBMENU_EXPANDED" description="PLG_DJMEGAMENU_SUBMENU_EXPANDED_DESC">
+				<option value="">PLG_DJMEGAMENU_INHERIT</option>
+				<option value="tree">PLG_DJMEGAMENU_TREE</option>
+				<option value="dropdown">PLG_DJMEGAMENU_DROPDOWN</option>
+			</field>
+			<field name="djmegamenu-dropdown_dir" type="radio" class="btn-group" default="" label="PLG_DJMEGAMENU_DROPDOWN_DIRECTION">
+				<option value="">JDEFAULT</option>
+				<option value="left">PLG_DJMEGAMENU_LEFT</option>
+				<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+			</field>
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_SUBMENU_BG_DESC" />
+			<field name="djmegamenu-bg_image" type="media" default="" label="PLG_DJMEGAMENU_SUBMENU_BG_IMAGE" />
+			<field name="djmegamenu-bg_pos_hor" type="radio" class="btn-group" default="right" label="PLG_DJMEGAMENU_SUBMENU_BG_HOR_POS">
+				<option value="left">PLG_DJMEGAMENU_LEFT</option>
+				<option value="center">PLG_DJMEGAMENU_CENTER</option>
+				<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+			</field>
+			<field name="djmegamenu-bg_pos_ver" type="radio" class="btn-group" default="bottom" label="PLG_DJMEGAMENU_SUBMENU_BG_VER_POS">
+				<option value="top">PLG_DJMEGAMENU_TOP</option>
+				<option value="center">PLG_DJMEGAMENU_CENTER</option>
+				<option value="bottom">PLG_DJMEGAMENU_BOTTOM</option>
+			</field>
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_MODULE_POSITION_DESC" />
+			<field name="djmegamenu-module_pos" type="text" size="20" default="" label="PLG_DJMEGAMENU_MODULE_POSITION" />
+			<field name="djmegamenu-module_style" type="chromestyle" default="System-xhtml" description="PLG_DJMEGAMENU_MODULES_STYLE_DESC" label="PLG_DJMEGAMENU_MODULES_STYLE" />
+			<field name="djmegamenu-module_show_link" type="radio" class="btn-group" default="0" label="PLG_DJMEGAMENU_MODULE_SHOW_LINK" description="PLG_DJMEGAMENU_MODULE_SHOW_LINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field type="djspacer" class="djinfo" label="PLG_DJMEGAMENU_MOBILE_MODULE_POSITION_DESC" />
+			<field name="djmobilemenu-module_pos" type="text" size="20" default="" label="PLG_DJMEGAMENU_MOBILE_MODULE_POSITION" />
+			<field name="djmobilemenu-module_style" type="chromestyle" default="System-xhtml" description="PLG_DJMEGAMENU_MOBILE_MODULES_STYLE_DESC" label="PLG_DJMEGAMENU_MOBILE_MODULES_STYLE" />
+			<field name="djmobilemenu-module_show_link" type="radio" class="btn-group" default="0" label="PLG_DJMEGAMENU_MOBILE_MODULE_SHOW_LINK" description="PLG_DJMEGAMENU_MOBILE_MODULE_SHOW_LINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field type="spacer" label="&lt;hr &#47;&gt;" />
+			<field name="djmegamenu-accesskey" type="text" size="1" maxlength="1" default="" class="input-mini" label="PLG_DJMEGAMENU_ACCESSKEY" description="PLG_DJMEGAMENU_ACCESSKEY_DESC" />
+		</fieldset>
+	</fields>
+</form>

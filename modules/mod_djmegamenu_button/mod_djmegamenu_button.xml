@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>DJ-MegaMenu - Mobile Menu Button</name>
+	<creationDate>August 2017</creationDate>
+    <author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2015 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.7.0</version>
+	<description>Place the Mobile Menu Button in any module position of your template.</description>
+	<files>
+		<filename module="mod_djmegamenu_button">mod_djmegamenu_button.php</filename>
+		<filename>mod_djmegamenu_button.xml</filename>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="module" type="sql" default="" label="DJ-MegaMenu Module" query="SELECT id AS value, concat(title, ' (ID: ', id ,')') AS module FROM #__modules WHERE module='mod_djmegamenu'">
+					<option value="">- select DJ-MegaMenu module -</option>
+				</field>
+				
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

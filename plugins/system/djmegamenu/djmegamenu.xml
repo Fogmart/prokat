@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>plg_system_djmegamenu</name>
+	<creationDate>August 2017</creationDate>
+    <author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2013-2016 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.6.0</version>
+	<description>PLG_SYSTEM_DJMEGAMENU_DESCRIPTION</description>
+	<files>
+		<filename plugin="djmegamenu">djmegamenu.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>params</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="wrappers" type="radio" default="1" label="PLG_DJMEGAMENU_WRAPPERS" description="PLG_DJMEGAMENU_WRAPPERS_DESC" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

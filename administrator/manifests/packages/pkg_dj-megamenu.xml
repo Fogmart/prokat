@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>DJ-MegaMenu Pro Package</name>
+	<packagename>dj-megamenu</packagename>
+	<creationDate>August 2017</creationDate>
+	<author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2017 DJ-Extensions.com, All rights reserved.</copyright>
+	<license> http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.7.0</version>
+	<url>http://dj-extensions.com</url>
+	<packager></packager>
+	<packagerurl></packagerurl>
+	<description><![CDATA[
+		<style type="text/css">
+			.djex-info { padding: 20px 30px 10px; margin: 0 0 20px 0; background: #5c14a6; color: #fff; border: 1px solid #400e74; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; -webkit-border-radius: 4px; border-radius: 4px; }
+			.djex-title { text-transform: uppercase; font-weight: bold; font-size: 14px; }
+			.djex-info a:link, .djex-info a:visited, .djex-info a:hover { color:#fff; text-decoration:underline; font-weight: 600; }	
+			.djex-info img { float: left; margin: 0 30px 10px 0; }
+		</style>
+		<div class="djex-info">
+			<img src="../modules/mod_djmegamenu/assets/images/ex_megamenu.png" />
+			<p class="djex-title">Thank you for installing DJ-MegaMenu Professional Edition!</p>
+			<p>The DJ-MegaMenu is an advanced menu system for your Joomla! and it's ready for mobiles providing Offcanvas Menu, Acordion Menu or simple Select Menu opened with well know mobile menu icon.
+			If you want to learn how to use DJ-MegaMenu please read <a target="_blank" href="http://dj-extensions.com/documentation">Documentation</a> and visit our <a target="_blank" href="http://dj-extensions.com/faq">FAQ Section</a></p>
+			<p>Check out our other extensions at <a target="_blank" href="http://dj-extensions.com">DJ-Extensions.com</a></p>
+			<div style="clear:both"></div>
+		</div>
+		]]></description>
+	<files>
+	        <file type="plugin" group="system" id="djmegamenu">plg_system_djmegamenu.zip</file>
+	        <file type="module" client="site" id="mod_djmegamenu">mod_djmegamenu.zip</file>
+	        <file type="module" client="site" id="mod_djmegamenu_button">mod_djmegamenu_button.zip</file>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="DJ-MegaMenu">https://dj-extensions.com/api/getUpdateInfo?extension=djmegamenu.xml</server>
+	</updateservers>
+</extension>

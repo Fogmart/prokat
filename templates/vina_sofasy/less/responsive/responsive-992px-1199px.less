@@ -1,0 +1,80 @@
+// Medium devices Desktops 
+// -----------------------
+	
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+	.sppb-container {
+		width: 970px;
+	}
+	.sp-megamenu-parent {
+		> li {
+			> a {
+				padding: 0 15px;
+			}
+			&.sp-has-child {
+				> a:before {
+					.right(5px);
+				}
+			}
+		}
+	}
+	
+	ul.social-icons {
+		li {
+			a {
+				.margin-right(5px);
+			}
+		}
+	}
+	.sp-module {
+		.cf_wrapp_all {
+			.slider_bkg_img {
+				width: 200px;
+			}
+			.cf_slider_gutter_m {
+				width: 185px;
+			}
+		}	
+	}
+	.vmcategory2 {
+		.sp-module-title {
+			.modtitle {
+				span:after {
+					display: none;
+				}
+			}
+		}
+	}
+	#sp-header.style-2 {
+		.social-icons {
+			display: none;
+		}
+		.sp-megamenu-parent {
+			> li {
+				> a {
+					padding: 0 20px;
+				}
+			}
+		}
+	}	
+}
+@media (max-width: @screen-md-max) {
+	.shipping-content {
+		ul {
+			li {
+				.margin-right(15px);
+			}
+		}
+		&.style-2 {
+			.box-icon {
+				width: 30%;
+			}
+			.box-text {
+				width: 70%;
+			}
+		}
+	}
+	
+}
+@media (min-width: @screen-md-min) {
+	
+}

@@ -1,0 +1,197 @@
+.vrcmodcarsgridcontainer {
+	width: 100%;
+	display: inline-block;
+}
+div.vrcinf {
+	float:left;
+	padding:0 0 0 8px;
+}
+.vrcmodcarsgridhorizontal {
+	list-style-type: none;
+	text-align: center;
+font-size: 16px;
+}
+ul.vrcmodcarsgridhorizontal li {
+	display:inline-block;
+	margin:0;
+	padding: 0;
+	vertical-align: top;
+}
+ul.vrcmodcarsgridhorizontal li:last-child {
+	margin:0;
+}
+
+ul.vrcmodcarsgridhorizontal li img {
+	width:100%;	
+}
+ul.vrcmodcarsgridvertical {
+	list-style-type: none;
+}
+.vrcmodcarsgrid-item-desc {
+	margin: 10px 0;
+	padding: 0 20px;
+}
+.vrcmodcarsgridboxdiv {
+	width: 100%;
+	display: inline-block;
+	border:1px solid #ddd;
+	background:#fff !important;
+	transition: all 400ms ease-in-out 0s;
+}
+.vrcmodcarsgridboxdiv:hover {
+	
+    transition: all 400ms ease-in-out 0s;
+    background:#fff !important;
+}
+.vrcmodcarsgridvertical img.vrcmodcarsgridimg {
+	max-width: 99% !important;
+	float:none;
+	clear:both;
+	margin: 10px 0 5px 0;
+}
+
+.vrcmodcarsgridimg {
+	margin-top: 10px;
+}
+
+span.vrcmodcarsgridname {
+	font-weight: bold;
+	font-size:15px;
+	color:#444;
+}
+
+.vrcmodcarsgridview {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    padding-bottom:15px;
+	opacity: 0;
+	position: absolute;
+display: none;
+	
+}
+
+.vrcmodcarsgridcont-item:hover .vrcmodcarsgridview {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    padding-bottom:15px;
+	opacity: 1;
+	//position: absolute;
+display: contents;
+transition: all 0.2s ease-in-out;
+}
+
+
+.vrcmodcarsgridview a {
+	display: inline-block;
+	padding:8px 25px;
+	border-radius: 3px;
+	background:#324d7a;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	color: #fff;
+}
+
+.vrcmodcarsgridview a:hover {
+	display: inline-block;
+	padding:8px 25px;
+	border-radius: 3px;
+	background:#324d7a;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	color: #fff;
+}
+
+.vrcmodcarsgridcont-sorting {
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+.vrcmodcarsgridcont-items {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.vrcmodcarsgridcont-item {
+	padding:10px;
+}
+.vrcmodcarsgrid-item_details {
+	text-align: center;
+	padding: 10px 0;
+}
+.vrcmodcarsgrid-item_title {
+	font-size: 1.1em;
+	font-weight: 600;
+}
+.vrcmodcarsgrid-item-btm {
+	display: inline-block;
+	width: 100%;
+	border-top: 1px solid #eee;
+	padding: 7px 10px;
+	font-size: 16px;
+	color: #999;
+}
+.vrcmodcarsgrid-item-btm > div {
+	//display: inline-block;
+}
+.vrcmodcarsgrid-item_cat {
+	text-align: center;
+}
+.vrcmodcarsgrid-item_carat .vrccarcarat {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 5px;
+	font-size: 14px;
+}
+.vrc-modcars-grid-item figure {
+	margin-bottom: 0;
+}
+.vrcmodcarsgrid-item_carat i {
+	font-size: 16px;
+}
+@media only screen and (max-width: 980px) {
+	.vrc-modcars-grid-item {
+		width: 33% !important;
+	}
+}
+@media only screen and (max-width: 740px) {
+	.vrc-modcars-grid-item {
+		width: 50% !important;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.vrcmodcarsgridhorizontal .vrc-modcars-item {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 580px) {
+	.vrc-modcars-grid-item {
+		width: 100% !important;
+	}
+}
+
+.vrc_price {
+	font-size: 20px;
+	color: #751717;
+	font-weight: bold;
+}
+
+.btn-vrcmodcarsgrid-btn {
+	color: #111;
+}
+
+.btn-vrcmodcarsgrid-btn:hover {
+	color: #111;
+	text-decoration: underline !important;
+}
+
+.vrcmodcarsgrid-box-cost {
+	padding: 8px 0;
+}
+
+.vrcmodcarsgridcont-item:hover .vrcmodcarsgrid-box-cost {
+	display:none;
+}

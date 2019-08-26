@@ -1,0 +1,281 @@
+/* DJ-MegaMenu general styles */
+.dj-megamenu-classic {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none;
+    height: 35px;
+    background: #fff url(../images/three_0.gif) repeat-x;
+    position: relative;
+    z-index: 500;
+    font-family: arial, verdana, sans-serif;
+    width: auto;
+}
+.dj-megamenu-classic li.dj-up {
+	position: relative;
+    display: block;
+    float: left;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.dj-megamenu-classic li a.dj-up_a {
+    display: block;
+    float: left;
+    height: 35px;
+    line-height: 33px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 0 0 15px;
+    cursor: pointer;
+    background: url(../images/three_0.gif) left top no-repeat;
+}
+.dj-megamenu-classic li a.dj-up_a span {
+    float: left;
+    display: block;
+    padding: 0 15px 0 0 !important;
+    height: 35px;
+    background: url(../images/three_0.gif) right top no-repeat;
+    color: inherit !important;
+}
+.dj-megamenu-classic li a.dj-up_a span.dj-drop {
+    padding: 0 25px 0 0 !important;
+    background: url(../images/three_0a.gif) no-repeat right top;
+}
+.dj-megamenu-classic li a.dj-up_a small.subtitle {
+	color: #AAAAAA;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    margin-top: -12px;
+}
+.dj-megamenu-classic li:hover a.dj-up_a,
+.dj-megamenu-classic li.hover a.dj-up_a, .dj-megamenu-classic li.active a.dj-up_a {
+    color: #fff;
+    background: url(../images/three_1.gif) left top no-repeat;
+}
+
+.dj-megamenu-classic li:hover a.dj-up_a span,
+.dj-megamenu-classic li.hover a.dj-up_a span, .dj-megamenu-classic li.active a.dj-up_a span {
+    background: url(../images/three_1.gif) no-repeat right top;
+}
+
+.dj-megamenu-classic li:hover a.dj-up_a span.dj-drop,
+.dj-megamenu-classic li.hover a.dj-up_a span.dj-drop, .dj-megamenu-classic li.active a.dj-up_a span.dj-drop {
+    background: url(../images/three_1a.gif) no-repeat right top;
+    padding-bottom: 3px;
+}
+
+.dj-megamenu-classic li.separator > a {
+    cursor: default;
+}
+
+.dj-megamenu-classic li a.dj-up_a span span.image-title {
+	background: none;
+	padding: 0 0 0 5px !important;
+	margin: 0 0 0 5px;
+	display: inline-block;
+	float: none;
+	height: auto;
+}
+.dj-megamenu-classic li a img {
+	border: 0;
+	margin: 0;
+	max-height: 24px;
+	vertical-align: top;
+}
+
+/* Default list styling */
+.dj-megamenu-classic li:hover,
+.dj-megamenu-classic li.hover {
+    position: relative;
+    z-index: 200;
+}
+/* Hide submenus */
+
+.dj-megamenu-classic li div.dj-subwrap, .dj-megamenu-classic li:hover div.dj-subwrap li div.dj-subwrap,
+.dj-megamenu-classic li.hover div.dj-subwrap li div.dj-subwrap {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* Show first level submenu */
+.dj-megamenu-classic li:hover div.dj-subwrap,
+.dj-megamenu-classic li.hover div.dj-subwrap {
+	left: 1px;
+    top: 35px;
+    background: #50b5d0;    
+    border: 1px solid #0b4d97;
+    height: auto;
+    z-index: 300;
+}
+/* Show higher level submenus */
+.dj-megamenu-classic li:hover div.dj-subwrap li:hover > div.dj-subwrap,
+.dj-megamenu-classic li.hover div.dj-subwrap li.hover > div.dj-subwrap {
+    left: 100%;
+    top: -2px;
+    background: #50b5d0;
+    border: 1px solid #0b4d97;
+    height: auto;
+    z-index: 400;
+}
+
+/* Submenu elements styles - drop down */
+.dj-megamenu-classic li div.dj-subcol {
+	float: left;
+}
+.dj-megamenu-classic li ul.dj-submenu {	
+    padding: 0px;
+    margin: 5px;
+    height: auto;
+    width: auto;
+}
+.dj-megamenu-classic li ul.dj-submenu > li {
+    display: block;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+.dj-megamenu-classic li ul.dj-submenu > li > a {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 13px;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #50b5d0;
+    padding: 3px 5px;
+}
+.dj-megamenu-classic li ul.dj-submenu > li > a small.subtitle {
+	color: #eef;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+}
+.dj-megamenu-classic li ul.dj-submenu > li:hover > a,
+.dj-megamenu-classic li ul.dj-submenu > li.hover > a {
+	background: #3f96a9;
+    color: #fff;
+}
+.dj-megamenu-classic li ul.dj-submenu > li > a:hover {	
+    border-color: #fff;
+}
+.dj-megamenu-classic li ul.dj-submenu > li > a.active {
+    background: #3f96a9;
+    color: #fff;
+}
+
+.dj-megamenu-classic li ul.dj-submenu > li.parent > a {
+    background: #50b5d0 url(../images/arrow.gif) 98% 6px no-repeat;
+}
+.dj-megamenu-classic li ul.dj-submenu > li.parent:hover > a,
+.dj-megamenu-classic li ul.dj-submenu > li.parent.hover > a {
+    background: #3f96a9 url(../images/arrow_over.gif) 98% 6px no-repeat;
+    color: #fff;
+    border-color: #fff;
+}
+.dj-megamenu-classic li ul.dj-submenu > li.parent > a.active {
+    background: #3f96a9 url(../images/arrow_over.gif) 98% 6px no-repeat;
+    color: #fff;
+}
+.dj-megamenu-classic li ul.dj-submenu > li.parent:hover > a.active,
+.dj-megamenu-classic li ul.dj-submenu > li.parent.hover > a.active {
+    border-color: #fff;
+}
+
+/* Submenu elements styles - tree */
+.dj-megamenu-classic li ul.dj-subtree {
+	list-style: none outside;
+	padding: 0 !important;
+    margin: 5px 0 5px 20px !important;
+}
+.dj-megamenu-classic li ul.dj-subtree > li {
+	list-style: square outside;
+	padding: 0;
+    margin: 0;
+    color: #3f96a9;
+}
+.dj-megamenu-classic li ul.dj-subtree > li > a {
+	display: inline-block;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 12px;
+    color: #222;
+    text-decoration: none;
+    padding: 2px 0;
+}
+.dj-megamenu-classic li ul.dj-subtree > li > a:hover {
+	background: transparent;
+	color: #fff;
+}
+.dj-megamenu-classic li ul.dj-subtree > li.active > a {
+	text-decoration: underline;
+}
+.dj-megamenu-classic li ul.dj-subtree > li > a small.subtitle {
+	color: #3f96a9;
+    display: block;
+    font-size: 0.9em;
+    line-height: 1;
+}
+
+/* modules loaded into menu */
+.dj-megamenu-classic .modules-wrap {
+	padding: 5px;
+}
+.dj-megamenu-classic .modules-wrap p {
+	display: block !important;
+	padding: 0 !important;
+}
+
+/* sticky menu */
+.dj-megamenu-classic.dj-megamenu-fixed {
+	position: fixed;
+}
+.dj-megamenu-classic.dj-megamenu-sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+.dj-megamenu-classic .dj-stickylogo {
+	position: absolute;
+	z-index: 550;
+}
+.dj-megamenu-classic .dj-stickylogo img {
+	max-height: 100%;
+	width: auto;
+}
+.dj-megamenu-classic .dj-stickylogo.dj-align-center {
+	position: static;
+	text-align: center;
+	margin: 10px 0;
+}
+.dj-megamenu-classic .dj-stickylogo.dj-align-left {
+	left: 20px;
+	max-height: 50px;
+	margin: 5px 0;
+}
+.dj-megamenu-classic .dj-stickylogo.dj-align-right {
+	right: 20px;
+	max-height: 50px;
+	margin: 5px 0;
+}
+
+/* full width submenu */
+.dj-megamenu-classic li.dj-up.fullsub {
+	position: static !important;
+}
+.dj-megamenu-classic li.dj-up.fullsub a.dj-up_a {
+	position: relative;
+}
+.dj-megamenu-classic .djsubrow_separator {
+	clear:both;
+	border-bottom: 1px solid #50b5d0;
+	padding: 0 0 20px;
+	margin: 0 0 20px;
+}

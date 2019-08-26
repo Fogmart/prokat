@@ -1,0 +1,24 @@
+.vikrentcaritinerary {
+	color: #666;
+}
+.vikrentcaritinerary > div {
+	padding: 2px 0 5px;
+}
+.vikrentcaritinerary span {
+	display: block;
+}
+.vikrentcaritinerary .vrcmodit_pickupts .vrcmodit_labelpickupts,
+.vikrentcaritinerary .vrcmodit_dropoffts .vrcmodit_labeldropoffts,
+.vrcmodit_location .vrcmodit_labellocations {
+	font-weight: bold;
+}
+.vrcmodit_location .vrcmodit_labellocations {}
+
+.vrcmodit_changeit span {
+	background: none repeat scroll 0 0 #DDDDDD;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 5px 10px;
+}

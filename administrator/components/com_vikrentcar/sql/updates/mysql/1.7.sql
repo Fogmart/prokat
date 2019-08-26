@@ -1,0 +1,13 @@
+INSERT INTO `#__vikrentcar_gpayments` (`name`,`file`,`published`,`note`,`charge`,`setconfirmed`,`shownotealw`,`val_pcent`,`ch_disc`) VALUES ('Authorize.net AIM','authorizenet_aim.php','0','<p></p>','0.00','0','0','1','1');
+INSERT INTO `#__vikrentcar_gpayments` (`name`,`file`,`published`,`note`,`charge`,`setconfirmed`,`shownotealw`,`val_pcent`,`ch_disc`) VALUES ('Offline Credit Card','offline_credit_card.php','0','<p></p>','0.00','0','0','1','1');
+ALTER TABLE `#__vikrentcar_seasons` ADD COLUMN `val_pcent` tinyint(1) NOT NULL DEFAULT 2;
+ALTER TABLE `#__vikrentcar_seasons` ADD COLUMN `losoverride` varchar(512) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_locfees` ADD COLUMN `invert` tinyint(1) NOT NULL DEFAULT 0;
+ALTER TABLE `#__vikrentcar_locfees` ADD COLUMN `losoverride` varchar(512) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_cars` ADD COLUMN `startfrom` decimal(12,2) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_orders` ADD COLUMN `order_total` decimal(12,2) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_caratteristiche` ADD COLUMN `ordering` int(10) NOT NULL DEFAULT 1;
+ALTER TABLE `#__vikrentcar_optionals` ADD COLUMN `ordering` int(10) NOT NULL DEFAULT 1;
+ALTER TABLE `#__vikrentcar_places` ADD COLUMN `closingdays` varchar(1024) DEFAULT NULL;
+INSERT INTO `#__vikrentcar_config` (`param`,`setting`) VALUES ('sendpdf','0');
+ALTER TABLE `#__vikrentcar_seasons` ADD COLUMN `keepfirstdayrate` tinyint(1) NOT NULL DEFAULT 0;

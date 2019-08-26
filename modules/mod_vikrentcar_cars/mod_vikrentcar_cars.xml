@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>VikRentCar Cars</name>
+	<author>E4J srl</author>
+	<creationDate>September 2018</creationDate>
+	<copyright>Copyright (C) e4j - Extensionsforjoomla.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>tech@extensionsforjoomla.com</authorEmail>
+	<authorUrl>https://e4j.com</authorUrl>
+	<version>1.13</version>
+	<description>This module shows a list of vehicles created with the component VikRentCar v1.12 or higher.</description>
+	<files>
+		<filename module="mod_vikrentcar_cars">mod_vikrentcar_cars.php</filename>
+		<folder>tmpl</folder>
+		<folder>php</folder>
+		<folder>src</folder>
+		<folder>webfonts</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_vikrentcar_cars.xml</filename>
+		<filename>mod_vikrentcar_cars.css</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">languages/en-GB/en-GB.mod_vikrentcar_cars.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_vikrentcar_cars/php">
+				<field name="Header01" type="header" default="Configuration" label="" description="" />
+
+				<field name="numb" type="number" default="4" min="0" max="10" step="1" label="Number of Vehicles Displayed" description="Number of Vehicles Displayed" size="5" filter="integer"/>
+				<field name="query" type="list" default="price" label="Ordering and Filtering" description="Ordering and Filtering">
+					<option value="price">By Price</option>
+					<option value="name">By Name</option>
+					<option value="category">By Category</option>
+				</field>
+				<field name="order" type="list" default="asc" label="Order Type" description="Ascending or Descending">
+					<option value="asc">Ascending</option>
+					<option value="desc">Descending</option>
+				</field>
+				<field name="show_desc" type="radio" default="0" label="Show Description" description="" class="btn-group">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="currency" type="text" default="€" label="Currency Symbol" description="Your Currency Symbol" size="10" filter="raw" />
+				<field name="showcatname" type="radio" default="1" label="Show Category Name" description="Show Category Name" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="layoutlist" type="list" default="0" label="Layout Cars List" description="Select Layout Cars List" >
+					<option value="0">Grid</option>
+					<option value="1">Scroll List</option>
+				</field>
+				<field name="numb_carrow" type="number" default="4" min="0" max="10" step="1" label="Cars per Row" description="" size="5" filter="integer"/>
+
+				<field name="autoplay" type="radio" default="0" label="Autoplay" description="" showon="layoutlist:1" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="pagination" type="radio" default="1" label="Dots" description="" showon="layoutlist:1" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="navigation" type="radio" default="0" label="Navigation Arrows" description="" showon="layoutlist:1" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field name="loadjq" type="radio" default="0" label="Load jQuery" description="" class="btn-group">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="Header02" type="header" default="Filtering by Category" label="" description="" />
+				<field name="catid" type="sql" default="0" label="Select a Category" query="SELECT id, name FROM #__vikrentcar_categories" key_field="id" value_field="name"/>
+				<field name="querycat" type="list" default="price" label="Ordering" description="Ordering">
+					<option value="price">By Price</option>
+					<option value="name">By Name</option>
+				</field>
+
+				<field name="Header03" type="header" default="Joomla!" label="" description="" />
+				<field name="itemid" type="menuitem" default="" label="Select a menu item" description="Select a menu item" />
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix, in case your template would like one" />
+			</fieldset>
+		</fields>
+	</config>
+
+	<updateservers>
+		<server type="extension" name="Vik Rent Car Cars" priority="1">https://extensionsforjoomla.com/api/updates/com_vikrentcar/modules/mod_vikrentcar_cars.xml</server>
+	</updateservers>
+</extension>

@@ -1,0 +1,141 @@
+//overight
+.border-radius(@top, @right, @bottom, @left) {
+	border-radius: @top @right @bottom @left;
+	.rtl & {
+		border-radius: @right @top @left @bottom;
+	}
+}
+.border-color(@top, @right, @bottom, @left) {
+	border-color: @top @right @bottom @left;
+	.rtl & {
+		border-color: @top @left @bottom @right;
+	}
+}
+.margin-right(@value: 10px){
+	margin-right: @value;
+	.rtl &{
+		margin-left: @value;
+		margin-right: 0;
+	}
+}
+.margin-left(@value: 10px){
+	margin-left: @value;
+	.rtl &{
+		margin-right: @value;
+		margin-left: 0
+	}
+}
+.margin(@top, @right, @bottom, @left) {
+	margin: @top @right @bottom @left;
+	.rtl & {
+		margin: @top @left @bottom @right;
+	}
+}
+ 
+.padding-right(@value: 10px){
+	padding-right: @value;
+	.rtl &{
+		padding-left: @value;
+		padding-right: 0;
+	}
+}
+.padding-left(@value: 10px){
+	padding-left: @value;
+	.rtl &{
+		padding-right: @value;
+		padding-left: 0;
+	}
+}
+.padding(@top, @right, @bottom, @left) {
+	padding: @top @right @bottom @left;
+	.rtl & {
+		padding: @top @left @bottom @right;
+	}
+}
+.right(@value: 10px){
+	right: @value;
+	.rtl &{
+		left: @value;
+		right: auto;
+	}
+}
+.left(@value: 10px){
+	left: @value;
+	.rtl &{
+		left: auto;
+		right: @value;
+	}
+}
+
+.float-right() {
+	float: right;
+	.rtl &{
+		float: left;
+	}
+}
+.float-left() {
+   float: left;
+   .rtl &{
+		float: right;
+	}
+ }
+.float-none() {
+   float: none;
+   .rtl &{
+		float: none;
+	}
+ }
+ 
+.text-left() {
+	text-align: left;
+	.rtl &{
+		text-align: right 
+	}
+}
+.text-right() {
+	text-align: right;
+	.rtl &{
+		text-align: left 
+	}
+}
+.text-center() {
+	text-align: center;
+}
+.border-left(@border) {
+	border-left: @border;
+	.rtl &{
+		border-left: none;
+		border-right: @border;
+	}
+}
+.border-right(@border) {
+	border-right: @border;
+	.rtl &{
+		border-right: none;
+		border-left: @border;
+	}
+}
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+.mixin-loop (@i) when (@i > 0) {
+  &:nth-child(@{i}) {
+    .transition(all unit(@i/3,s) ease 0s);
+  }
+  .mixin-loop(@i - 1);
+}
+.floatright {
+	.float-right;
+}
+.floatleft {
+	.float-left;
+}
+.sppb-text-left{
+	.text-left;
+}
+.sppb-text-right{
+	.text-right;
+}

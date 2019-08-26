@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>DJ-MegaMenu</name>
+	<creationDate>August 2017</creationDate>
+    <author>DJ-Extensions.com</author>
+	<copyright>Copyright (C) 2012-2016 DJ-Extensions.com, All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses GNU/GPL</license>
+	<authorEmail>contact@dj-extensions.com</authorEmail>
+	<authorUrl>http://dj-extensions.com</authorUrl>
+	<version>3.7.0</version>
+	<description>MOD_DJMEGAMENU_MODULE_DESC</description>
+	<files>
+		<filename module="mod_djmegamenu">mod_djmegamenu.php</filename>
+		<filename>mod_djmegamenu.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>helperversion.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>themes</folder>
+		<folder>mobilethemes</folder>
+		<folder>fields</folder>
+	</files>
+	<scriptfile>script.djmegamenu.php</scriptfile>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_djmegamenu/fields">
+		
+			<fieldset name="basic">
+				<field name="updater" type="djupdater" extension="mod_djmegamenu" pro="1" label="MOD_DJMEGAMENU_UPDATER" />
+				<field name="menu" type="menu" default="mainmenu" label="MOD_DJMEGAMENU_MENU_NAME" description="MOD_DJMEGAMENU_MENU_NAME_DESC" />
+				
+				<field
+					name="base"
+					type="menuitem"
+					label="MOD_DJMEGAMENU_FIELD_ACTIVE_LABEL"
+					description="MOD_DJMEGAMENU_FIELD_ACTIVE_DESC"
+					>
+					<option value="">JCURRENT</option>
+				</field>
+				
+				<field name="startLevel" type="list" default="1" label="MOD_DJMEGAMENU_START_LEVEL" description="MOD_DJMEGAMENU_START_LEVEL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+				</field>
+				<field name="endLevel" type="list" default="0" label="MOD_DJMEGAMENU_END_LEVEL" description="MOD_DJMEGAMENU_END_LEVEL_DESC">
+					<option value="0">JALL</option>
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>					
+				</field>
+				
+				<field name="icons" type="radio" class="btn-group" default="2" label="MOD_DJMEGAMENU_SHOW_ICONS" description="MOD_DJMEGAMENU_SHOW_ICONS_DESC">
+					<option value="2">MOD_DJMEGAMENU_BOTH</option>
+					<option value="1">MOD_DJMEGAMENU_MEGAMENU</option>
+					<option value="3">MOD_DJMEGAMENU_MOBILEMENU</option>
+					<option value="0">JNONE</option>
+				</field>
+				<field name="subtitles" type="radio" class="btn-group" default="2" label="MOD_DJMEGAMENU_SHOW_SUBTITLES" description="MOD_DJMEGAMENU_SHOW_SUBTITLES_DESC">
+					<option value="2">MOD_DJMEGAMENU_BOTH</option>
+					<option value="1">MOD_DJMEGAMENU_MEGAMENU</option>
+					<option value="3">MOD_DJMEGAMENU_MOBILEMENU</option>
+					<option value="0">JNONE</option>
+				</field>
+				<field name="usenote" type="radio" class="btn-group" default="1" label="MOD_DJMEGAMENU_USE_NOTE" description="MOD_DJMEGAMENU_USE_NOTE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="fa" type="radio" class="btn-group" default="1" label="MOD_DJMEGAMENU_FONTAWESOME" description="MOD_DJMEGAMENU_FONTAWESOME_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="effects" label="MOD_DJMEGAMENU_ANIMATION_OPTIONS">
+				<field name="theme" type="djfolderlist" default="default" label="MOD_DJMEGAMENU_THEME" description="MOD_DJMEGAMENU_THEME_DESC" directory="modules/mod_djmegamenu/themes" hide_none="true" hide_default="true">
+					<option value="_override">MOD_DJMEGAMENU_THEME_OVERRIDE</option>
+					<option value="_custom">MOD_DJMEGAMENU_CUSTOM_THEME</option>
+				</field>
+				
+				<field type="djspacer" class="djtitle" label="MOD_DJMEGAMENU_CUSTOM_THEME_DESC" showon="theme:_custom" />
+				<field name="megabg" type="djcolor" format="rgba" default="#383838" label="MOD_DJMEGAMENU_MENU_BG" showon="theme:_custom" />
+				<field name="megacolor" type="djcolor" format="rgba" default="#ffffff" label="MOD_DJMEGAMENU_MENU_COLOR" showon="theme:_custom" />
+				<field name="megastcolor" type="djcolor" format="rgba" default="#999999" label="MOD_DJMEGAMENU_MENU_SUBTITLE_COLOR" showon="theme:_custom" />
+				<field name="megabg_a" type="djcolor" format="rgba" default="#1681d1" label="MOD_DJMEGAMENU_MENU_BG_ACTIVE" showon="theme:_custom" />
+				<field name="megacolor_a" type="djcolor" format="rgba" default="#ffffff" label="MOD_DJMEGAMENU_MENU_COLOR_ACTIVE" showon="theme:_custom" />
+				<field name="megastcolor_a" type="djcolor" format="rgba" default="#a4c4f5" label="MOD_DJMEGAMENU_MENU_SUBTITLE_COLOR_ACTIVE" showon="theme:_custom" />
+				<field name="megasubbg" type="djcolor" format="rgba" default="#303030" label="MOD_DJMEGAMENU_SUBMENU_BG" showon="theme:_custom" />
+				<field name="megasubcolor" type="djcolor" format="rgba" default="#c3c3c3" label="MOD_DJMEGAMENU_SUBMENU_COLOR" showon="theme:_custom" />
+				<field name="megasubstcolor" type="djcolor" format="rgba" default="#666666" label="MOD_DJMEGAMENU_SUBMENU_SUBTITLE_COLOR" showon="theme:_custom" />
+				<field name="megasubbg_a" type="djcolor" format="rgba" default="#1681d1" label="MOD_DJMEGAMENU_SUBMENU_BG_ACTIVE" showon="theme:_custom" />
+				<field name="megasubcolor_a" type="djcolor" format="rgba" default="#ffffff" label="MOD_DJMEGAMENU_SUBMENU_COLOR_ACTIVE" showon="theme:_custom" />
+				<field name="megasubstcolor_a" type="djcolor" format="rgba" default="#a4c4f5" label="MOD_DJMEGAMENU_SUBMENU_SUBTITLE_COLOR_ACTIVE" showon="theme:_custom" />
+				<field name="megamodcolor" type="djcolor" format="rgba" default="#d2d2d2" label="MOD_DJMEGAMENU_MENU_MODULE_COLOR" showon="theme:_custom" />
+				<field type="spacer" label="&lt;hr &#47;&gt;" showon="theme:_custom" />
+				
+				<field name="orientation" type="radio" class="btn-group" default="horizontal" label="MOD_DJMEGAMENU_ORIENTATION" description="MOD_DJMEGAMENU_ORIENTATION_DESC">
+					<option value="horizontal">MOD_DJMEGAMENU_HORIZONTAL</option>
+					<option value="vertical">MOD_DJMEGAMENU_VERTICAL</option>
+				</field>
+				<field type="djspacer" alert_type="warning" label="MOD_DJMEGAMENU_ORIENTATION_VERTICAL_NOTE" description="MOD_DJMEGAMENU_ORIENTATION_COMPATIBILITY_NOTE" showon="orientation:vertical" />
+				<field name="dropdown_dir" type="radio" class="btn-group" default="" label="PLG_DJMEGAMENU_DROPDOWN_DIRECTION" description="PLG_DJMEGAMENU_DROPDOWN_DIRECTION_DESC">
+					<option value="">JDEFAULT</option>
+					<option value="left">PLG_DJMEGAMENU_LEFT</option>
+					<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+				</field>			
+				<field name="expand" type="radio" class="btn-group" default="dropdown" label="MOD_DJMEGAMENU_SUBMENU_EXPANDED" description="MOD_DJMEGAMENU_SUBMENU_EXPANDED_DESC">
+					<option value="tree">PLG_DJMEGAMENU_TREE</option>
+					<option value="dropdown">PLG_DJMEGAMENU_DROPDOWN</option>
+				</field>
+				<field name="column_width" type="text" class="input-mini" size="10" default="200" label="MOD_DJMEGAMENU_COLUMN_WIDTH" description="MOD_DJMEGAMENU_COLUMN_WIDTH_DESC" />
+				<field name="percent_width" type="text" class="input-mini" size="10" default="25" label="MOD_DJMEGAMENU_PERCENT_WIDTH" description="MOD_DJMEGAMENU_PERCENT_WIDTH_DESC" />
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				
+				<field name="moo" type="radio" class="btn-group" default="1" label="MOD_DJMEGAMENU_MOO" description="MOD_DJMEGAMENU_MOO_DESC">
+					<option value="1">JENABLED</option>
+					<option value="0">JDISABLED</option>
+				</field>
+			
+				<field type="djspacer" class="djtitle" label="MOD_DJMEGAMENU_ANIMATION_OPTIONS_DESC" showon="moo:1" />
+				
+				<field name="animation_in" type="groupedlist" label="MOD_DJMEGAMENU_ENTRANCE_ANIMATION" default="fadeInUp" showon="moo:1">
+					
+					<group label="Bouncing Entrances">
+					  <option value="bounceIn">bounceIn</option>
+					  <option value="bounceInDown">bounceInDown</option>
+					  <option value="bounceInLeft">bounceInLeft</option>
+					  <option value="bounceInRight">bounceInRight</option>
+					  <option value="bounceInUp">bounceInUp</option>
+					</group>
+			
+					<group label="Fading Entrances">
+					  <option value="fadeIn">fadeIn</option>
+					  <option value="fadeInDown">fadeInDown</option>
+					  <option value="fadeInDownBig">fadeInDownBig</option>
+					  <option value="fadeInLeft">fadeInLeft</option>
+					  <option value="fadeInLeftBig">fadeInLeftBig</option>
+					  <option value="fadeInRight">fadeInRight</option>
+					  <option value="fadeInRightBig">fadeInRightBig</option>
+					  <option value="fadeInUp">fadeInUp</option>
+					  <option value="fadeInUpBig">fadeInUpBig</option>
+					</group>
+			
+					<group label="Flippers">
+					  <option value="flipInX">flipInX</option>
+					  <option value="flipInY">flipInY</option>
+					</group>
+						
+					<group label="Rotating Entrances">
+					  <option value="rotateIn">rotateIn</option>
+					  <option value="rotateInDownLeft">rotateInDownLeft</option>
+					  <option value="rotateInDownRight">rotateInDownRight</option>
+					  <option value="rotateInUpLeft">rotateInUpLeft</option>
+					  <option value="rotateInUpRight">rotateInUpRight</option>
+					</group>
+			
+					<group label="Sliders">
+					  <option value="slideInLeft">slideInLeft</option>
+					  <option value="slideInRight">slideInRight</option>
+					  <option value="slideInDown">slideInDown</option>
+					  <option value="slideInUp">slideInUp</option>
+					</group>
+					
+					<group label="Zooming Entrances">
+					  <option value="zoomIn">zoomIn</option>
+					  <option value="zoomInX">zoomInX</option>
+					  <option value="zoomInY">zoomInY</option>
+					</group>
+					
+					<group label="Specials">
+					  <option value="rollIn">rollIn</option>
+					  <option value="lightSpeedIn">lightSpeedIn</option>
+					</group>
+					
+				</field>
+				  
+				<field name="animation_out" type="groupedlist" label="MOD_DJMEGAMENU_EXIT_ANIMATION" default="zoomOut" showon="moo:1">
+					
+					<group label="Bouncing Exits">
+					  <option value="bounceOut">bounceOut</option>
+					  <option value="bounceOutDown">bounceOutDown</option>
+					  <option value="bounceOutLeft">bounceOutLeft</option>
+					  <option value="bounceOutRight">bounceOutRight</option>
+					  <option value="bounceOutUp">bounceOutUp</option>
+					</group>
+			
+					<group label="Fading Exits">
+					  <option value="fadeOut">fadeOut</option>
+					  <option value="fadeOutDown">fadeOutDown</option>
+					  <option value="fadeOutDownBig">fadeOutDownBig</option>
+					  <option value="fadeOutLeft">fadeOutLeft</option>
+					  <option value="fadeOutLeftBig">fadeOutLeftBig</option>
+					  <option value="fadeOutRight">fadeOutRight</option>
+					  <option value="fadeOutRightBig">fadeOutRightBig</option>
+					  <option value="fadeOutUp">fadeOutUp</option>
+					  <option value="fadeOutUpBig">fadeOutUpBig</option>
+					</group>
+			
+					<group label="Flippers">
+					  <option value="flipOutX">flipOutX</option>
+					  <option value="flipOutY">flipOutY</option>
+					</group>
+						
+					<group label="Rotating Exits">
+					  <option value="rotateOut">rotateOut</option>
+					  <option value="rotateOutDownLeft">rotateOutDownLeft</option>
+					  <option value="rotateOutDownRight">rotateOutDownRight</option>
+					  <option value="rotateOutUpLeft">rotateOutUpLeft</option>
+					  <option value="rotateOutUpRight">rotateOutUpRight</option>
+					</group>
+			
+					<group label="Sliders">
+					  <option value="slideOutLeft">slideOutLeft</option>
+					  <option value="slideOutRight">slideOutRight</option>
+					  <option value="slideOutUp">slideOutUp</option>
+					  <option value="slideOutDown">slideOutDown</option>
+					</group>
+					
+					<group label="Zooming Exits">
+					  <option value="zoomOut">zoomOut</option>
+					  <option value="zoomOutX">zoomOutX</option>
+					  <option value="zoomOutY">zoomOutY</option>
+					</group>
+					
+					<group label="Specials">
+					  <option value="rollOut">rollOut</option>
+					  <option value="lightSpeedOut">lightSpeedOut</option>
+					</group>
+					
+				</field>
+				
+				<field name="animation_speed" type="list" label="MOD_DJMEGAMENU_ANIMATION_SPEED" default="normal" showon="moo:1">
+					<option value="fast">Fast</option>
+					<option value="normal">Normal</option>
+					<option value="slow">Slow</option>
+				</field>
+				
+				<field name="openDelay" type="list" default="250" size="10" label="MOD_DJMEGAMENU_OPEN_DELAY" description="MOD_DJMEGAMENU_OPEN_DELAY_DESC" showon="moo:1">
+					<option value="0">JNONE</option>
+					<option value="250">MOD_DJMEGAMENU_SHORT</option>
+					<option value="500">MOD_DJMEGAMENU_MEDIUM</option>
+					<option value="1000">MOD_DJMEGAMENU_LONG</option>
+				</field>
+				<field name="closeDelay" type="list" default="500" size="10" label="MOD_DJMEGAMENU_CLOSE_DELAY" description="MOD_DJMEGAMENU_CLOSE_DELAY_DESC" showon="moo:1">
+					<option value="0">JNONE</option>
+					<option value="250">MOD_DJMEGAMENU_SHORT</option>
+					<option value="500">MOD_DJMEGAMENU_MEDIUM</option>
+					<option value="1000">MOD_DJMEGAMENU_LONG</option>
+					<option value="600000">MOD_DJMEGAMENU_DEBUG</option>
+				</field>
+				
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" showon="moo:1" />
+				
+				<field name="event" type="radio" class="btn-group" default="mouseenter" label="MOD_DJMEGAMENU_OPEN_EVENT" description="MOD_DJMEGAMENU_OPEN_EVENT_DESC" showon="moo:1">
+					<option value="mouseenter">MOD_DJMEGAMENU_MOUSEENTER</option>
+					<option value="click">MOD_DJMEGAMENU_CLICK</option>
+					<option value="click_all">MOD_DJMEGAMENU_CLICK_ALL</option>
+				</field>
+				<field name="wrapper" type="text" default="" label="MOD_DJMEGAMENU_WRAPPER" description="MOD_DJMEGAMENU_WRAPPER_DESC" showon="moo:1" />
+				
+				<field name="fixed" type="radio" class="btn-group" default="0" label="MOD_DJMEGAMENU_STICKY" description="MOD_DJMEGAMENU_STICKY_DESC" showon="moo:1">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="fixed_offset" type="text" default="0" label="MOD_DJMEGAMENU_STICKY_OFFSET" description="MOD_DJMEGAMENU_STICKY_OFFSET_DESC" showon="moo:1[AND]fixed:1" />
+				<field name="fixed_logo" type="media" default="" label="MOD_DJMEGAMENU_FIXED_LOGO" description="MOD_DJMEGAMENU_FIXED_LOGO_DESC" showon="moo:1[AND]fixed:1" />
+				<field name="fixed_logo_align" type="radio" class="btn-group" default="right" label="MOD_DJMEGAMENU_FIXED_LOGO_ALIGN" description="MOD_DJMEGAMENU_FIXED_LOGO_ALIGN_DESC" showon="moo:1[AND]fixed:1">
+					<option value="left">PLG_DJMEGAMENU_LEFT</option>
+					<option value="center">PLG_DJMEGAMENU_CENTER</option>
+					<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+				</field>
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" showon="moo:1" />
+				<field name="wcag" type="list" default="1" label="MOD_DJMEGAMENU_KEYBOARD_ACCESS" description="MOD_DJMEGAMENU_KEYBOARD_ACCESS_DESC" showon="moo:1">
+					<option value="1">JENABLED</option>
+					<option value="0">JDISABLED</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="mobile" label="MOD_DJMEGAMENU_MOBILE_MENU_OPTIONS">
+				
+				<field name="select" type="list" default="0" class="djoptionswitcher" label="MOD_DJMEGAMENU_MOBILE_MENU" description="MOD_DJMEGAMENU_MOBILE_MENU_DESC">
+					<option value="0">JDISABLED</option>
+					<option value="-1">MOD_DJMEGAMENU_MOBILE_MENU_HIDDEN</option>
+					<option value="1">MOD_DJMEGAMENU_MOBILE_MENU_SELECT</option>
+					<option value="3">MOD_DJMEGAMENU_MOBILE_MENU_ACCORDION</option>
+					<option value="2">MOD_DJMEGAMENU_MOBILE_MENU_OFFCANVAS</option>
+				</field>
+				<field type="djspacer" class="djinfo" label="MOD_DJMEGAMENU_MOBILE_MENU_HIDDEN_INFO" showon="select:-1" />
+				
+				<field name="width" type="text" class="input-mini" size="10" default="979" label="MOD_DJMEGAMENU_MOBILE_MENU_TRIGGER_WIDTH" description="MOD_DJMEGAMENU_MOBILE_MENU_TRIGGER_WIDTH_DESC" showon="select!:0" filter="integer" />
+				
+				<field name="mobiletheme" type="djfolderlist" default="dark" label="MOD_DJMEGAMENU_MOBILE_THEME" description="MOD_DJMEGAMENU_MOBILE_THEME_DESC" directory="modules/mod_djmegamenu/mobilethemes" hide_none="true" hide_default="true" showon="select!:0,-1" >
+					<option value="_override">MOD_DJMEGAMENU_THEME_OVERRIDE</option>
+					<option value="_custom">MOD_DJMEGAMENU_CUSTOM_THEME</option>
+				</field>
+				
+				<field type="djspacer" class="djtitle" label="MOD_DJMEGAMENU_CUSTOM_MOBILE_THEME_DESC" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilebtnbg" type="djcolor" format="rgba" default="#434343" label="MOD_DJMEGAMENU_BUTTON_BG" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilebtncolor" type="djcolor" format="rgba" default="#e4e4e4" label="MOD_DJMEGAMENU_BUTTON_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilebg" type="djcolor" format="rgba" default="#393939" label="MOD_DJMEGAMENU_MENU_BG" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilecolor" type="djcolor" format="rgba" default="#f8f8f8" label="MOD_DJMEGAMENU_MENU_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilestcolor" type="djcolor" format="rgba" default="#888888" label="MOD_DJMEGAMENU_MENU_SUBTITLE_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilebg_a" type="djcolor" format="rgba" default="#333333" label="MOD_DJMEGAMENU_MENU_BG_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilecolor_a" type="djcolor" format="rgba" default="#ffffff" label="MOD_DJMEGAMENU_MENU_COLOR_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilestcolor_a" type="djcolor" format="rgba" default="#aaaaaa" label="MOD_DJMEGAMENU_MENU_SUBTITLE_COLOR_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubbg" type="djcolor" format="rgba" default="#333333" label="MOD_DJMEGAMENU_SUBMENU_BG" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubcolor" type="djcolor" format="rgba" default="#aeaeae" label="MOD_DJMEGAMENU_SUBMENU_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubstcolor" type="djcolor" format="rgba" default="#666666" label="MOD_DJMEGAMENU_SUBMENU_SUBTITLE_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubbg_a" type="djcolor" format="rgba" default="#2e2e2e" label="MOD_DJMEGAMENU_SUBMENU_BG_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubcolor_a" type="djcolor" format="rgba" default="#e4e4e4" label="MOD_DJMEGAMENU_SUBMENU_COLOR_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilesubstcolor_a" type="djcolor" format="rgba" default="#888888" label="MOD_DJMEGAMENU_SUBMENU_SUBTITLE_COLOR_ACTIVE" showon="select!:0,-1[AND]mobiletheme:_custom" />
+				<field name="mobilemodcolor" type="djcolor" format="rgba" default="#aeaeae" label="MOD_DJMEGAMENU_MENU_MODULE_COLOR" showon="select!:0,-1[AND]mobiletheme:_custom" />				
+				
+				<field name="mobile_button" type="radio" class="btn-group" default="icon" label="MOD_DJMEGAMENU_MOBILE_BUTTON_TYPE" description="MOD_DJMEGAMENU_MOBILE_BUTTON_TYPE_DESC" showon="select:1,2,3">
+					<option value="icon">MOD_DJMEGAMENU_MOBILE_BUTTON_ICON</option>
+					<option value="icon_text">MOD_DJMEGAMENU_MOBILE_BUTTON_ICON_TEXT</option>
+					<option value="text">MOD_DJMEGAMENU_MOBILE_BUTTON_TEXT</option>
+				</field>
+				<field name="mobile_button_text" type="text" default="" label="MOD_DJMEGAMENU_MOBILE_BUTTON_CUSTOM_TEXT" description="MOD_DJMEGAMENU_MOBILE_BUTTON_CUSTOM_TEXT_DESC" hint="MOD_DJMEGAMENU_MOBILE_BUTTON_CUSTOM_TEXT_HINT" showon="select:1,2,3[AND]mobile_button:icon_text,text" />
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" />
+				
+				<!-- Select options -->
+				
+				<field name="select_type" type="radio" class="btn-group" default="button" label="MOD_DJMEGAMENU_SELECT_TYPE" description="MOD_DJMEGAMENU_SELECT_TYPE_DESC" showon="select:1">
+					<option value="button">MOD_DJMEGAMENU_MOBILE_BUTTON</option>
+					<option value="input">MOD_DJMEGAMENU_SELECT_INPUT</option>
+				</field>
+				
+				<!-- Accordion options -->
+				
+				<field name="accordion_pos" type="radio" class="btn-group" default="static" label="MOD_DJMEGAMENU_ACCORDION_POSITION" description="MOD_DJMEGAMENU_ACCORDION_POSITION_DESC" showon="select:3">
+					<option value="static">MOD_DJMEGAMENU_STATIC</option>
+					<option value="absolute">MOD_DJMEGAMENU_ABSOLUTE</option>
+				</field>
+				<field name="accordion_align" type="radio" class="btn-group" default="right" label="MOD_DJMEGAMENU_ACCORDION_ALIGN" description="MOD_DJMEGAMENU_ACCORDION_ALIGN_DESC" showon="select:3">
+					<option value="left">PLG_DJMEGAMENU_LEFT</option>
+					<option value="center">PLG_DJMEGAMENU_CENTER</option>
+					<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+				</field>
+				
+				<!-- Offcanvas options -->
+				
+				<field name="offcanvas_logo" type="media" default="" size="50" label="MOD_DJMEGAMENU_OFFCANVAS_LOGO" description="MOD_DJMEGAMENU_OFFCANVAS_LOGO_DESC" showon="select:2" />
+				
+				<field name="offcanvas_pos" type="radio" class="btn-group" default="left" label="MOD_DJMEGAMENU_OFFCANVAS_POSITION" description="MOD_DJMEGAMENU_OFFCANVAS_POSITION_DESC" showon="select:2">
+					<option value="left">PLG_DJMEGAMENU_LEFT</option>
+					<option value="right">PLG_DJMEGAMENU_RIGHT</option>
+				</field>
+				
+				<field name="offcanvas_effect_desc" type="djspacer" class="djinfo" label="MOD_DJMEGAMENU_OFFCANVAS_EFFECT_DESC" showon="select:2" />
+				<field name="offcanvas_effect" type="groupedlist" label="MOD_DJMEGAMENU_OFFCANVAS_EFFECT" default="3" showon="select:2">
+					<group label="Standard effects">
+						<option value="1">Slide in on top</option>
+						<option value="2">Reveal</option>
+						<option value="3">Push</option>
+						<option value="4">Slide along</option>
+						<option value="5">Reverse slide out</option>
+					</group>
+					<group label="Partially supported effects">
+						<option value="6">Rotate pusher</option>
+						<option value="7">3D rotate in</option>
+						<option value="8">3D rotate out</option>
+						<option value="9">Scale down pusher</option>
+						<option value="10">Scale Up</option>
+						<option value="11">Scale and rotate pusher</option>
+						<option value="12">Open door</option>
+						<option value="13">Fall down</option>
+						<option value="14">Delayed 3D Rotate</option>
+					</group>
+				</field>
+				
+				<field name="offcanvas_topmod_style_desc" type="djspacer" class="djinfo" label="MOD_DJMEGAMENU_MODULES_TOP_DESC" showon="select:2" />
+				<field name="offcanvas_topmod_style" type="chromestyle" default="System-xhtml" label="MOD_DJMEGAMENU_MODULES_TOP_STYLE" showon="select:2" />
+				<field name="offcanvas_botmod_style_desc" type="djspacer" class="djinfo" label="MOD_DJMEGAMENU_MODULES_BOTTOM_DESC" showon="select:2" />
+				<field name="offcanvas_botmod_style" type="chromestyle" default="System-xhtml" label="MOD_DJMEGAMENU_MODULES_BOTTOM_STYLE" showon="select:2" />
+				
+				<field name="accordion_collapsed" type="radio" class="btn-group" default="0" label="MOD_DJMEGAMENU_START_COLLAPSED" description="MOD_DJMEGAMENU_START_COLLAPSED_DESC" showon="select:2,3">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="spacer" label="&lt;hr &#47;&gt;" showon="select:1,2,3" />
+				
+				<field type="djspacer" class="djinfo" label="MOD_DJMEGAMENU_MOBILE_MENU_WRAPPER_DESC" showon="select:1,2,3" />
+				<field type="djmobilebutton" label="MOD_DJMEGAMENU_MOBILE_MENU_WRAPPER" class="input-xlarge" showon="select:1,2,3" />
+				
+			</fieldset>
+			
+			<fieldset name="advanced">
+				
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+								
+			</fieldset>
+		</fields>
+	</config>
+	
+	<media destination="djextensions" folder="media">
+		<folder>css</folder>
+	</media>
+</extension>

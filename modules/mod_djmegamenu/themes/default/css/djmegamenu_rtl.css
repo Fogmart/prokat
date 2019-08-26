@@ -1,0 +1,80 @@
+/* DJ-MegaMenu RTL styles */
+.dj-megamenu-default li.dj-up {
+    float: right;
+}
+.dj-megamenu-default li a.dj-up_a {
+    float: right;
+    border-left: 1px solid #000;
+    border-right: 1px solid #555;
+}
+.dj-megamenu-default li.first a.dj-up_a {
+	border-left: 1px solid #000;
+	border-right: 0;
+}
+.dj-megamenu-default li:last-child a.dj-up_a {
+	border-right: 1px solid #555;
+	border-left: 0;
+}
+.dj-megamenu-default li a.dj-up_a span {
+    float: right;
+}
+.dj-megamenu-default li a.dj-up_a span.dj-drop {
+    padding: 0 0 0 20px !important;
+}
+.dj-megamenu-default li a.dj-up_a .arrow {
+	right: auto;
+	left: 16px;
+}
+.dj-megamenu-default li a.dj-up_a span span.image-title {
+	margin: 0 15px 0 0;
+}
+/* Show first level submenu */
+.dj-megamenu-default li:hover div.dj-subwrap,
+.dj-megamenu-default li.hover div.dj-subwrap {
+	left: auto;
+	right: 0;
+}
+/* Show higher level submenus */
+.dj-megamenu-default li:hover div.dj-subwrap li:hover > div.dj-subwrap,
+.dj-megamenu-default li.hover div.dj-subwrap li.hover > div.dj-subwrap {
+    left: auto;
+    right: 100%;
+    margin: 0 10px 0 0;
+}
+
+/* Submenu elements styles - drop down */
+.dj-megamenu-default li div.dj-subcol {
+	float: right;
+}
+.dj-megamenu-default li ul.dj-submenu > li > a img,
+.dj-megamenu-default li ul.dj-submenu > li > a .fa, 
+.dj-megamenu-default li ul.dj-submenu > li > a [class^="icon-"] {
+	float: right;
+	margin: 0 0 8px 15px;
+}
+.dj-megamenu-default li ul.dj-submenu > li.parent > a .arrow {
+    right: auto;
+    left: 6px;
+}
+.dj-megamenu-default li ul.dj-submenu > li.parent:not(.subtree) > a .arrow:before {
+	content: "\f104";
+}
+.dj-megamenu-default li ul.dj-submenu > li.parent:not(.subtree) > a:hover .arrow {
+	right: auto;
+	left: 4px;
+}
+
+/* Submenu elements styles - tree */
+.dj-megamenu-default li ul.dj-subtree {
+    margin: 5px 25px 5px 0 !important;
+}
+
+/* vertical menu orientation */
+.dj-megamenu-default.verticalMenu li a.dj-up_a .arrow:before {
+	content: "\f104";
+}
+.dj-megamenu-default.verticalMenu li:hover div.dj-subwrap,
+.dj-megamenu-default.verticalMenu li.hover div.dj-subwrap {
+	left: auto !important;
+	right: 100% !important;
+}

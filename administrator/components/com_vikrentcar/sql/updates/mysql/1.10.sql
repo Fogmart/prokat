@@ -1,0 +1,13 @@
+INSERT INTO `#__vikrentcar_config` (`param`,`setting`) VALUES ('multilang','1');
+INSERT INTO `#__vikrentcar_config` (`param`,`setting`) VALUES ('timeformat','H:i');
+INSERT INTO `#__vikrentcar_config` (`param`,`setting`) VALUES ('taxsummary','0');
+INSERT INTO `#__vikrentcar_config` (`param`,`setting`) VALUES ('todaybookings','1');
+ALTER TABLE `#__vikrentcar_cars` ADD COLUMN `alias` varchar(128) NOT NULL;
+ALTER TABLE `#__vikrentcar_categories` ADD COLUMN `ordering` int(10) NOT NULL DEFAULT 1;
+ALTER TABLE `#__vikrentcar_custfields` ADD COLUMN `isnominative` tinyint(1) NOT NULL DEFAULT 0;
+ALTER TABLE `#__vikrentcar_custfields` ADD COLUMN `isphone` tinyint(1) NOT NULL DEFAULT 0;
+ALTER TABLE `#__vikrentcar_orders` ADD COLUMN `phone` varchar(32) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_orders` ADD COLUMN `nominative` varchar(64) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_tmplock` ADD COLUMN `idorder` int(10) DEFAULT NULL;
+ALTER TABLE `#__vikrentcar_oohfees` ADD COLUMN `wdays` varchar(32) NOT NULL DEFAULT '-0-,-1-,-2-,-3-,-4-,-5-,-6-';
+CREATE TABLE IF NOT EXISTS `#__vikrentcar_translations` (`id` int(10) unsigned NOT NULL AUTO_INCREMENT,`table` varchar(64) NOT NULL,`lang` varchar(16) NOT NULL,`reference_id` int(10) NOT NULL,`content` text DEFAULT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;

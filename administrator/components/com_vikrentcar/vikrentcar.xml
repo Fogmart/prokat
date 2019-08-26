@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>COM_VIKRENTCAR</name>
+	<version>1.12</version>
+	<creationDate>2018-June</creationDate>
+	<author>by - joomlok.com</author>
+	<authorEmail>tech@joomlok.com</authorEmail>
+	<authorUrl>https://joomlok.com/</authorUrl>
+	<copyright>Copyright E4J s.r.l. - All rights reserved</copyright>
+	<license>GNU GPL</license>
+	<description>
+	<![CDATA[
+		<h1>VikRentCar v1.12</h1>
+		<div style="clear: both;"></div>
+		<p>Create your Vehicles Rental Website with VikRentCar.</p>
+	]]>
+	</description>
+	
+	<scriptfile>script.php</scriptfile>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	
+	<files folder="site">
+		<filename>vikrentcar.php</filename>
+		<filename>controller.php</filename>
+		<filename>vikrentcar_styles.css</filename>
+		<filename>vikrentcar_custom.css</filename>
+		<filename>_router.php</filename>
+		<filename>index.html</filename>
+		<folder>class</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+		<folder>resources</folder>
+		<folder>themes</folder>
+	</files>
+	
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB.com_vikrentcar.ini</language>
+		<language tag="it-IT">it-IT.com_vikrentcar.ini</language>
+	</languages>
+	
+	<administration>
+	
+		<menu img="components/com_vikrentcar/icon-16-vikrentcar.png">COM_VIKRENTCAR_MENU</menu>
+		
+		<files folder="admin">
+			<filename>vikrentcar.php</filename>
+			<filename>vikrentcar.css</filename>
+			<filename>vikrentcar.png</filename>
+			<filename>icon-16-vikrentcar.png</filename>
+			<filename>icon-48-vikrentcar.png</filename>
+			<filename>index.html</filename>
+			<filename>engLicense.txt</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<folder>resources</folder>
+			<folder>payments</folder>
+			<folder>fields</folder>
+			<folder>helpers</folder>
+			<folder>xml_export</folder>
+			<folder>sql</folder>
+			<folder>views</folder>
+		</files>
+		
+		<languages folder="admin/language">
+			<language tag="en-GB">en-GB.com_vikrentcar.ini</language>
+			<language tag="en-GB">en-GB.com_vikrentcar.sys.ini</language>
+			<language tag="it-IT">it-IT.com_vikrentcar.ini</language>
+			<language tag="it-IT">it-IT.com_vikrentcar.sys.ini</language>
+		</languages>
+		
+	</administration>
+
+
+</extension>

@@ -1,0 +1,151 @@
+.vrcdivsearchmodule {
+	background:#d9eef8;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	width:95%;
+	border:0;
+	padding: 10px;
+}
+.vrcdivsearchmodule .vrcsfentrycont {
+	margin: 0 0 10px 0;
+	display: inline-block;
+	min-width: 70%;
+	width: 100%;
+}
+.vrcdivsearch .vrcsfentrycont select, 
+.vrcdivsearch .vrcsfentrycont input {
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.vrcdivsearchmodule .vrcsfentrycont .vrcsfentrydate .hasDatepicker {
+	//background:#fff url(images/calendar-ext.png) 90% center no-repeat;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	padding:3px 6px;
+	height: 32px;
+	
+	border:1px solid #ccc;
+	float: left;
+	margin: 0 10px 0 0;
+}
+.vrcdivsearchmodule .vrcsfentrycont .vrcsfentrydate .ui-datepicker-trigger {
+	display: none;
+}
+.vrcdivsearchmodule .vrcsfentryselect {
+	background: #fff url(images/select-arrow.png) right center no-repeat;
+	overflow: hidden;
+	min-width: 55%;
+	width: 100%;
+	border: 1px solid #ccc;
+   	border-radius: 4px;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+}
+.vrcdivsearchmodule .vrcsfentryselect select {
+	background: transparent;
+    padding: 5px 5px 0;
+    font-size: 12px !important;
+    line-height: 1;
+    border:0; 
+    border-radius: 0;
+    height: 30px;
+    -webkit-a5ppearance: none;
+    width: 120%;
+    color:#111;
+}
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodselph, 
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodselpm,
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodseldh, 
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodseldm {
+	//background: #fff url(images/select-arrow-hour.png) right center no-repeat;
+	overflow: hidden;
+	display: inline-block;
+	border: 1px solid #ccc;
+   	border-radius: 4px;
+   -moz-border-radius: 4px;
+   -webkit-border-radius: 4px;
+   float: left;
+}
+.vrcdivsearchmodule .vrcsfentrycont .vrctimesep {
+	display: inline-block;
+	padding: 5px;
+	float: left;
+}
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodselph select,
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodselpm select,
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodseldh select,
+.vrcdivsearchmodule .vrcsfentrycont #vrcmodseldm select {
+	background: #fff;
+    padding: 7px 5px 0;
+    font-size: 12px !important;
+    line-height: 1;
+    border:0; 
+    border-radius: 0;
+    height: 30px;
+    -webkit-a5ppearance: none;
+    width: 145%;
+    color:#111;
+}
+.vrcdivsearch .vrcsfentrycont label {
+	display: inline-block;
+	margin: 0 5px 0 0;
+	width: 100%;
+}
+.vrcdivsearch .vrcsfentrycont .vrcsfentrylabsel {
+	width: 68%;
+	float: left;
+}
+.vrcdivsearchmodule .vrcsfentrycont .vrcsfentrytime {
+	float: right;
+	width: 32%;
+	//margin: 0 0 0 41px;
+}
+.vrcdivsearch .vrcsfentrylabsel label {
+	float: left;
+}
+.vrcdivsearch .vrcsfentrylabsel .vrcsfentrydate {
+	
+}
+.vrcdivsearch .vrcsfentrycont div {
+	//display: inline-block;
+	text-align: left;
+}
+.vrcdivsearchmodule .vrcsfentrysubmit {
+	width: 100%;
+}
+.vrcdivsearchmodule .vrcsfentrysubmit .vrcsearch {
+	font-size: 14px;
+background: #324d7a;
+color: #fff;
+}
+
+.vrcdivsearchmodule .vrcsfentrysubmit .vrcsearch:hover {
+	font-size: 14px;
+background: #30cf03;
+color: #fff;
+}
+
+.vrcsfentrysubmit {
+	text-align: center !important;
+}
+
+.raz:placeholder {
+  color: red;
+  opacity: 1; /* сделать обычным неполупрозрачным цветом в Firefox */ 
+}
+
+.modplacetitle {
+	font-size: 18px;
+}
+
+.vrc-caltrigger {
+	margin: 8px 0;
+}
+
+.fa-calendar:before {
+	font-size: 18px;
+	color: #777;
+	margin: 0 10px;
+}
