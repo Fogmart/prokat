@@ -193,7 +193,27 @@ if (!empty($car['idopt']) && is_array($optionals)) {
 		}
 		//
 		?>
-		<tr><td class="vrc-tableopt-td-img"><?php echo (!empty($o['img']) ? "<img src=\"".VRC_ADMIN_URI."resources/".$o['img']."\" align=\"middle\" />" : "") ?></td><td class="vrc-tableopt-td-name"><?php echo $o['name']; ?></td><td class="vrc-tableopt-td-price"> <span class="vrc_price2"><?php echo ($tax_summary ? $optcost : VikRentCar::numberFormat(VikRentCar::sayOptionalsPlusIva($optcost, $o['idiva']))); ?></span> <span class="vrc_currency"><?php echo $currencysymb; ?></span></td><td class="vrc-tableopt-td-ckbx"><?php echo $optquaninp; ?></td></tr>
+		<tr>
+            <td class="vrc-tableopt-td-ckbx"><?php echo $optquaninp; ?></td>
+            <td class="vrc-tableopt-td-img">
+                <?php echo (!empty($o['img']) ? "<img src=\"".VRC_ADMIN_URI."resources/".$o['img']."\" align=\"middle\" />" : "") ?></td>
+            <td class="vrc-tableopt-td-name"><?php echo $o['name']; ?></td>
+            <td style="display: inline-flex;">
+                <span style="display: grid;padding-right: 5px;">
+                    <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </span>
+                <input type="text" readonly style="width: 33px;text-align: center;padding: 0px;"
+                       class="qty" value="1" name="optqty<?=$o['id']?>">
+                <input type="hidden" class="basecost" value="<?=($tax_summary ? $optcost : VikRentCar::sayOptionalsPlusIva($optcost, $o['idiva']))?>">
+            </td>
+            <td class="vrc-tableopt-td-price">
+                <span class="vrc_price2">
+                    <?php echo ($tax_summary ? $optcost : VikRentCar::numberFormat(VikRentCar::sayOptionalsPlusIva($optcost, $o['idiva']))); ?>
+                </span> <span class="vrc_currency">
+                    <?php echo $currencysymb; ?></span></td>
+
+        </tr>
 		<?php
 		if (strlen(strip_tags(trim($o['descr'])))) {
 		?>
@@ -251,5 +271,34 @@ if (!empty($car['idopt']) && is_array($optionals)) {
 	</div>
 		
 </form>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".fa-angle-up").click(addqty)
+        jQuery(".fa-angle-down").click(remqty)
+    })
+    function addqty() {
+        var cnt = jQuery(".qty", jQuery(this).closest("td")).val()
+        if (cnt == "") cnt = 0
+        jQuery(".qty", jQuery(this).closest("td")).val(parseInt(cnt)+1)
+        recalcSum( this )
+    }
+    function remqty() {
+        var cnt = jQuery(".qty", jQuery(this).closest("td")).val()
+        if (cnt == "") cnt = 0
+        cnt = parseInt(cnt)-1
+        if (cnt < 1) cnt = 1
+        jQuery(".qty", jQuery(this).closest("td")).val(cnt)
+        recalcSum( this )
+    }
+    function recalcSum( el ) {
+        var basecost =  jQuery(".basecost", jQuery(el).closest("td")).val()
+        var qty = jQuery(".qty", jQuery(el).closest("td")).val()
+        var cost = parseFloat(basecost) * parseInt(qty)
+        jQuery(".vrc_price2", jQuery(el).closest("tr")).html(cost)
+        jQuery("[type='checkbox']", jQuery(el).closest("tr")).val(qty)
+    }
+    
+</script>
 <?php
 VikRentCar::printTrackingCode();
