@@ -608,17 +608,17 @@ font-weight: normal;
 .vrccustomfields .vrcseparatorcf {
 	background: none repeat scroll 0 0 #f6f6f6;
     color: #666;
-    font-size: 16px;
-    margin: 10px 0 0;
-    padding: 10px 0 10px 20px !important;
-    text-transform: uppercase;
+	font-size: 16px;
+	margin: 10px 0 0;
+	padding: 10px 0 10px 20px !important;
+	text-transform: uppercase;
 }
 .vrcdivcustomfield {
-    display: inline-block;
-    margin: 0 2px 13px 0;
+	display: inline-block;
+	margin: 0 2px 13px 0;
 }
 .vrccustomfldinfo {
-    width: 100%;
+	width: 100%;
 }
 .vrc-oconfirm-cfield-entry-checkbox > div {
 	display: inline-block;
@@ -637,8 +637,8 @@ font-weight: normal;
 
 .car_title {
 	border-bottom: 1px solid #ddd;
-    margin: 20px 0 13px;
-    padding: 0 0 5px;
+	margin: 20px 0 13px;
+	padding: 0 0 5px;
 }
 .car_title .vrhword {
 	font-size: 18px;
@@ -646,7 +646,16 @@ font-weight: normal;
 }
 .vrc-tableopt-td-name {
 	font-weight: bold;
-	width: 64%;
+	width: 50%;
+}
+
+.vrc-tableopt-td-price1 {
+	width: 10%;
+}
+
+.vrc-tableopt-td-qty {
+	width: 15%;
+
 }
 
 .car_separator {
